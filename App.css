@@ -1,0 +1,266 @@
+/* Main container */
+.cad-app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Header styling */
+.app-header {
+  width: 100%;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.app-header h1 {
+  color: #2a3f54;
+  margin: 0;
+  padding: 10px 0;
+}
+
+/* Server status warning */
+.server-status-warning {
+  background-color: #ffecb3;
+  color: #856404;
+  padding: 8px 15px;
+  border-radius: 4px;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  display: inline-block;
+  border-left: 4px solid #f0ad4e;
+}
+
+/* Controls panel */
+.controls-panel {
+  width: 100%;
+  max-width: 800px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Upload section styling */
+.upload-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* File input styling */
+.file-input-label {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #3a7ca5;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.file-input-label:hover {
+  background-color: #2c6087;
+}
+
+.file-input {
+  display: none;
+}
+
+/* Button styling */
+.action-button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s, opacity 0.3s;
+}
+
+.upload-button {
+  background-color: #4caf50;
+  color: white;
+}
+
+.upload-button:hover {
+  background-color: #3d8b40;
+}
+
+.export-button {
+  background-color: #ff9800; 
+  color: white;
+}
+
+.export-button:hover {
+  background-color: #e68a00;
+}
+
+.action-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Export options container */
+.export-options {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Format select dropdown styling */
+.format-select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  font-family: inherit;
+  font-size: 14px;
+  min-width: 180px;
+  cursor: pointer;
+}
+
+.format-select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Message notification styling */
+.message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e8f4fd;
+  color: #333;
+  padding: 12px 20px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  max-width: 800px;
+  width: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.message.loading {
+  background-color: #fff8e5;
+}
+
+.message p {
+  margin: 0;
+}
+
+/* Loading spinner */
+.spinner {
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-top: 3px solid #3a7ca5;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 3D viewer container */
+.viewer-container {
+  width: 80%;
+  height: 70vh;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  margin-bottom: 20px;
+}
+
+/* Instructions section */
+.instructions {
+  width: 100%;
+  max-width: 800px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 15px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.instructions h3 {
+  color: #2a3f54;
+  margin-top: 0;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.controls-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.control-item {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 200px;
+}
+
+.control-icon {
+  background-color: #eaeaea;
+  padding: 5px 10px;
+  margin-right: 10px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: #444;
+  min-width: 60px;
+  text-align: center;
+}
+
+/* Model info section */
+.model-info {
+  margin-top: 20px;
+}
+
+.model-info p {
+  margin: 5px 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .viewer-container {
+    width: 100%;
+    height: 50vh;
+  }
+  
+  .controls-panel,
+  .message,
+  .instructions {
+    width: 95%;
+  }
+  
+  .control-item {
+    min-width: 100%;
+  }
+  
+  .upload-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .export-options {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .format-select {
+    width: 100%;
+  }
+}
